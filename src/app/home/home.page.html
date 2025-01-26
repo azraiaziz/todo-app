@@ -1,4 +1,37 @@
 <ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-title>Todo App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+  <div>
+    <ion-list>
+      <ion-card>
+      <ion-item *ngFor="let todo of todos" [routerLink]="['/detail',todo.id]">
+        <ion-label>
+          <h1>{{todo.title}}</h1>
+          <p>{{todo.description}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+    </ion-list>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button [routerLink]="['/add']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<!--<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       Blank
@@ -18,3 +51,4 @@
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
 </ion-content>
+-->

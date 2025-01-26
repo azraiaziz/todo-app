@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <!--app.routes.ts-->
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add new item</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!--<div class="container">
+  <ion-item>
+    <ion-input label="Item name" labelPlacement="floating">
+
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Title</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+ 
+  <ion-item>
+    <ion-label position="floating">Description</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+ 
+</div>-->
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Add</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-item>
+   <ion-label position="floating">Title</ion-label>
+   <ion-input [(ngModel)]="newTodo['title']"></ion-input>
+ </ion-item>
+
+ <ion-item>
+   <ion-label position="floating">Description</ion-label>
+   <ion-input [(ngModel)]="newTodo['description']"></ion-input>
+ </ion-item>
+
+ <ion-item>
+   <ion-label position="floating">Place</ion-label>
+   <ion-input [(ngModel)]="newTodo['place']"></ion-input>
+ </ion-item>
+
+ <ion-button expand="full" color="primary" (click)="addItemPressed()">ADD NEW ITEM</ion-button>
+
+</ion-content>
