@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonFab, IonFabButton, IonIcon, RouterModule, IonButtons, IonBackButton,IonItem,IonInput,IonLabel,IonList,IonCard],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonFab, IonFabButton, IonIcon, RouterModule, IonButtons, IonBackButton,IonItem,IonInput,IonLabel,IonList,IonCard,CommonModule],
 })
 export class HomePage implements OnInit{
   todos:Todo[] = [];
@@ -17,11 +17,11 @@ export class HomePage implements OnInit{
     addIcons({ addOutline});
   }
   //when the app is loaded(OnCreate), retrieve the list of todos
-  ngOnInit(): void{
+  ngOnInit(){
     this.todos = this.todoService.getAll();
   }
 
-  ionViewWillEnter(): void {
+  ionViewWillEnter(){
     this.todos = this.todoService.getAll();
     console.log(this.todos);
   }

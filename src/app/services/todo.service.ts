@@ -31,4 +31,11 @@ export class TodoService {
   }
   //return all the todos (arrow notation)
   getAll:()=>Todo[]=()=>this.todos;
+
+  //: Todo is the return type
+  getById(id:number):Todo{
+    //to relate with our notes
+    //return this.todos.find(val => val.id ===id); //return object
+    return this.todos.filter(val => val.id === id)[0];//return array
+  }
 }

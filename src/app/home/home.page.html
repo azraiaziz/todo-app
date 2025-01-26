@@ -13,9 +13,10 @@
 
   
   <div>
+    <p *ngIf="todos.length === 0">No todos available. Click the "+" button to add one!</p>
     <ion-list>
-      <ion-card>
-      <ion-item *ngFor="let todo of todos" [routerLink]="['/detail',todo.id]">
+      <ion-card *ngFor="let todo of todos" [routerLink]="['/detail',todo.id]">
+      <ion-item >
         <ion-label>
           <h1>{{todo.title}}</h1>
           <p>{{todo.description}}</p>

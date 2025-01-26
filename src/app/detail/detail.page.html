@@ -2,17 +2,28 @@
   <ion-toolbar color="tertiary">
     <ion-button slot="start">
       <ion-back-button defaultHref="/">
-        
+
       </ion-back-button>
     </ion-button>
-    <ion-title>detail</ion-title>
+    <ion-title>Detail Page</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">detail</ion-title>
+      <ion-title size="large">Detail Page</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card>
+    <ion-item>
+      <ion-label>
+        <h1>{{todo?.title}}</h1>
+        <h4>{{todo?.place}}</h4>
+        <p>{{todo?.description}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-button slot="start" name = "checkmark-outline" color="secondary">Mark as complete</ion-button>
+    <ion-button slot="start" name="trash-outline" color="danger">Delete Item</ion-button>
+  </ion-card>
 </ion-content>
